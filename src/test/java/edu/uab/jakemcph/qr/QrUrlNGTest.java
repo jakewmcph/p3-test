@@ -11,75 +11,42 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-/**
- *
- */
+/** */
 public class QrUrlNGTest {
+  private QrUrl uno;
 
-    public QrUrlNGTest() {
-    }
+  public QrUrlNGTest() {}
 
-    @BeforeMethod
-    public void setUpMethod() throws Exception {
-    }
+  @BeforeMethod
+  public void setUpMethod() throws Exception {
+    uno = new QrUrl("tyrese", "https://www.nba.com");
+  }
 
-    @AfterMethod
-    public void tearDownMethod() throws Exception {
-    }
+  @AfterMethod
+  public void tearDownMethod() throws Exception {}
 
-    /**
-     * Test of isValid method, of class QrUrl.
-     */
-    @Test
-    public void testIsValid() {
-        System.out.println("isValid");
-        QrUrl instance = null;
-        boolean expResult = false;
-        boolean result = instance.isValid();
-        assertEquals(result, expResult);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
+  /** Test of isValid method, of class QrUrl. */
+  @Test
+  public void testIsValid() {
+    assertTrue(uno.isValid());
+  }
 
-    /**
-     * Test of toString method, of class QrUrl.
-     */
-    @Test
-    public void testToString() {
-        System.out.println("toString");
-        QrUrl instance = null;
-        String expResult = "";
-        String result = instance.toString();
-        assertEquals(result, expResult);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
+  /** Test of toString method, of class QrUrl. */
+  @Test
+  public void testToString() {
+    assertEquals(uno.toString(), "QrUrl: tyrese");
+  }
 
-    /**
-     * Test of getQrText method, of class QrUrl.
-     */
-    @Test
-    public void testGetQrText() {
-        System.out.println("getQrText");
-        QrUrl instance = null;
-        String expResult = "";
-        String result = instance.getQrText();
-        assertEquals(result, expResult);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
+  /** Test of getQrText method, of class QrUrl. */
+  @Test
+  public void testGetQrText() {
+    assertEquals(uno.getQrText(), "https://www.nba.com");
+  }
 
-    /**
-     * Test of setUrl method, of class QrUrl.
-     */
-    @Test
-    public void testSetUrl() {
-        System.out.println("setUrl");
-        String url = "";
-        QrUrl instance = null;
-        instance.setUrl(url);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
+  /** Test of setUrl method, of class QrUrl. */
+  @Test
+  public void testSetUrl() {
+    uno.setUrl("https://www.nfl.com");
+    assertEquals(uno.getQrText(), "https://www.nfl.com");
+  }
 }

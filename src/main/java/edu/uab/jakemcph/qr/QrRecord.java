@@ -16,10 +16,12 @@ public abstract class QrRecord {
   private static long count = 1000000000;
   private final String uid; // a unique ID (ten-digit String)
   protected String description; // a one-line description
+  protected String url;
 
   public QrRecord(String description) {
     this.uid = "" + ++count;
     this.description = fixUpDescription(description);
+    this.url = url;
   }
 
   /**
@@ -38,6 +40,10 @@ public abstract class QrRecord {
    */
   public String getDescription() {
     return description;
+  }
+
+  public String getUrl() {
+    return url;
   }
 
   /**

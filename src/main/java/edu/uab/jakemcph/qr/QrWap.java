@@ -10,10 +10,10 @@ package edu.uab.jakemcph.qr;
 public class QrWap extends QrRecord {
 
   // Wireless Access Point Information
-  private String networkType;
-  private String ssid;
-  private String password;
-  private boolean hidden;
+  public String networkType;
+  public String ssid;
+  public String password;
+  public boolean hidden;
 
   /**
    * Create a QrWap
@@ -136,5 +136,11 @@ public class QrWap extends QrRecord {
     } else {
       return text;
     }
+  }
+
+  void isHidden(boolean b) {
+    throw new UnsupportedOperationException(
+        "Not supported yet."); // Generated from
+                               // nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
   }
 }

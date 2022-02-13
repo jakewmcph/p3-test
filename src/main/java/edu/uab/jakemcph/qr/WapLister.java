@@ -28,7 +28,7 @@ public class WapLister {
   private static final int MAX_QR_RECORDS = 5;
 
   /** @param args the command line arguments (unused) */
-  public static void main(String[] args) {
+  public static void main(String[] args) throws Exception {
     ArrayList<QrWap> wap = new ArrayList<>();
 
     QrWap[] qrWap = new QrWap[MAX_QR_RECORDS];
@@ -41,34 +41,37 @@ public class WapLister {
 
     Collections.addAll(wap, qrWap);
 
-    System.out.println("WapLister -- enter text in description to find correct QR Code");
+    System.out.println("Are you using a CSV? (Input Y or N)");
+    var yOrN = new Scanner(System.in);
+    String yN = yOrN.next();
 
-    var in = new Scanner(System.in);
-    String pattern = in.next();
+    if (yN.equalsIgnoreCase("Y")) {
 
-    for (var record : wap) {
-      if (record.getDescription().contains(pattern)) {
-        displayQRCode(record);
-        System.exit(0);
+      var in =
+          new Scanner(
+              new File("C:\\Users\\Jake7\\OneDrive\\Documents\\NetBeansProjects\\P3_CSV.csv"));
+      String pattern = in.next();
+
+      for (var record : wap) {
+        if (record.getDescription().contains(pattern)) {
+          displayQRCode(record);
+          System.exit(0);
+        }
       }
+    } else if (yN.equalsIgnoreCase("N")) {
+      System.out.println("WapLister -- enter text in description to find correct QR Code");
+
+      var in = new Scanner(System.in);
+      String pattern = in.next();
+
+      for (var record : wap) {
+        if (record.getDescription().contains(pattern)) {
+          displayQRCode(record);
+          System.exit(0);
+        }
+      }
+      System.out.println("Did not find a matching pattern.");
     }
-
-    //    for (String record : wap) {
-    //      if (record.equals(wap.get(0))) {
-    //        String list =
-    //            "WIFI:S:"
-    //                + wap.get(1)
-    //                + ";T:"
-    //                + wap.get(2)
-    //                + ";P:"
-    //                + wap.get(3)
-    //                + ";H:"
-    //                + wap.get(4)
-    //                + ";;";
-    //        return (list);
-    //      }
-
-    System.out.println("Did not find a matching pattern.");
   }
 
   /**

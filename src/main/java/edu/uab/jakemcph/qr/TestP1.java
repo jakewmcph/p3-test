@@ -11,7 +11,7 @@ public class TestP1 {
 
   /** @param args the command line arguments */
   public static void main(String[] args) {
-    System.out.println("David Green, dgreen@uab.edu"); // change
+    System.out.println("Jake McPhearson, jakemcph@uab.edu");
 
     var uab = new QrUrl("UAB", "https://www.uab.edu");
     var error1 = new QrUrl("Error 1", null);
