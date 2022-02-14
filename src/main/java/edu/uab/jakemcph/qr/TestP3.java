@@ -10,7 +10,7 @@ package edu.uab.jakemcph.qr;
 import java.time.LocalDateTime;
 import java.time.Month;
 
-/** */
+/** Creates an event string that displays information about an event. */
 public class TestP3 {
 
   private static final int MAX_QR_EVENTS = 10;

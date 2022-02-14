@@ -11,7 +11,7 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-/** */
+/** A test for the QrContact class */
 public class QrContactNGTest {
   private QrContact quatro;
 
@@ -237,4 +237,58 @@ public class QrContactNGTest {
   public void testIsCellNumberValid() {
     assertTrue(quatro.isCellNumberValid());
   }
-} 
+
+  /** Test of getQrText method, of class QrContact. */
+  @Test
+  public void testGetQrText() {
+    assertEquals(
+        quatro.getQrText(),
+        ("BEGIN: QRCONTACT"
+            + "\n"
+            + "VERSION: "
+            + "1.0"
+            + "\n"
+            + "NAME: "
+            + "Haliburton"
+            + ";"
+            + "Tyrese"
+            + "\n"
+            + "FULL NAME: "
+            + "Tyrese"
+            + " "
+            + "Haliburton"
+            + "\n"
+            + "JOB TITLE: "
+            + "Point Guard"
+            + "\n"
+            + "ORGANIZATION: "
+            + "Indiana Pacers"
+            + "\n"
+            + "URL: "
+            + "https://www.nba.com"
+            + "\n"
+            + "EMAIL: "
+            + "pacers@gmail.com"
+            + "\n"
+            + "WORK NUMBER: "
+            + "+1 (463)-123-4567"
+            + "\n"
+            + "CELL NUMBER: "
+            + "+1 (463)-098-7654"
+            + "\n"
+            + "STREET: "
+            + "123 Pacers Way"
+            + "\n"
+            + "CITY: "
+            + "Indianapolis"
+            + "\n"
+            + "STATE: "
+            + "IN"
+            + "\n"
+            + "ZIP CODE: "
+            + "46077"
+            + "\n"
+            + "END: QRCONTACT"
+            + "\n"));
+  }
+}

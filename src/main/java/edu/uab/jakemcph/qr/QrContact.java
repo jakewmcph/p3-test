@@ -9,13 +9,12 @@ package edu.uab.jakemcph.qr;
 
 import java.util.regex.Pattern;
 
-/** */
+/** Creates a contact string that displays information about a contact. */
 public class QrContact extends QrUrl {
 
   private String version;
   private String firstName;
   private String lastName;
-  //  private String description;
   private String company;
   private String url;
   private String email;
@@ -57,58 +56,128 @@ public class QrContact extends QrUrl {
     this.zip = deNull(zip);
   }
 
+  /**
+   * Get the cell phone number information.
+   *
+   * @return outputs the cellNumber.
+   */
   public String getCellNumber() {
     return cellNumber;
   }
 
+  /**
+   * Get the city information.
+   *
+   * @return outputs the city.
+   */
   public String getCity() {
     return city;
   }
 
+  /**
+   * Get the company information.
+   *
+   * @return outputs the company.
+   */
   public String getCompany() {
     return company;
   }
 
+  /**
+   * Get the email address information.
+   *
+   * @return outputs the email.
+   */
   public String getEmail() {
     return email;
   }
 
+  /**
+   * Get the first name information.
+   *
+   * @return outputs the firstName.
+   */
   public String getFirstName() {
     return firstName;
   }
 
+  /**
+   * Get the job title information.
+   *
+   * @return outputs the description.
+   */
   public String getJobTitle() {
     return description;
   }
 
+  /**
+   * Get the last name information.
+   *
+   * @return outputs the lastName.
+   */
   public String getLastName() {
     return lastName;
   }
 
+  /**
+   * Get the state information.
+   *
+   * @return outputs the state.
+   */
   public String getState() {
     return state;
   }
 
+  /**
+   * Get the street address information.
+   *
+   * @return outputs the street.
+   */
   public String getStreet() {
     return street;
   }
 
+  /**
+   * Get the URL information.
+   *
+   * @return outputs the url.
+   */
   public String getUrl() {
     return url;
   }
 
+  /**
+   * Get the version information.
+   *
+   * @return outputs the version.
+   */
   public String getVersion() {
     return version;
   }
 
+  /**
+   * Get the work phone number information.
+   *
+   * @return outputs the workNumber.
+   */
   public String getWorkNumber() {
     return workNumber;
   }
 
+  /**
+   * Get the ZIP code information.
+   *
+   * @return outputs the zip.
+   */
   public String getZip() {
     return zip;
   }
 
+  /**
+   * Determines if the information provided is valid for QrContact.
+   *
+   * @return outputs true/false.
+   */
   @Override
   public boolean isValid() {
 
@@ -134,6 +203,11 @@ public class QrContact extends QrUrl {
     return true;
   }
 
+  /**
+   * Determines if the information provided is valid for a URL.
+   *
+   * @return outputs true/false.
+   */
   public boolean isUrlValid() {
     var p =
         Pattern.compile(
@@ -146,12 +220,22 @@ public class QrContact extends QrUrl {
     return m.matches();
   }
 
+  /**
+   * Determines if the information provided is valid for an email address.
+   *
+   * @return outputs true/false.
+   */
   public boolean isEmailValid() {
     var p = Pattern.compile("^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,6}$", Pattern.CASE_INSENSITIVE);
     var m = p.matcher(email);
     return m.matches();
   }
 
+  /**
+   * Determines if the information provided is valid for a phone number.
+   *
+   * @return outputs true/false.
+   */
   public boolean isWorkNumberValid() {
     var p =
         Pattern.compile(
@@ -162,6 +246,11 @@ public class QrContact extends QrUrl {
     return m.matches();
   }
 
+  /**
+   * Determines if the information provided is valid for a phone number.
+   *
+   * @return outputs true/false.
+   */
   public boolean isCellNumberValid() {
     var p =
         Pattern.compile(
@@ -172,6 +261,11 @@ public class QrContact extends QrUrl {
     return m.matches();
   }
 
+  /**
+   * Get the information required for the string and print it.
+   *
+   * @return outputs the QrContact string.
+   */
   public String getQrText() {
     if ((isValid() == false) && (firstName == null) && (lastName == null)) {
       return ("BEGIN: QRCONTACT"
@@ -348,71 +442,128 @@ public class QrContact extends QrUrl {
     } else return "The Contact is Invalid";
   }
 
-  /** @param version the version to set */
+  /**
+   * Set the version information.
+   *
+   * @param version sets the new version.
+   */
   public void setVersion(String version) {
     this.version = version;
   }
 
-  /** @param firstName the firstName to set */
+  /**
+   * Set the first name information.
+   *
+   * @param firstName sets the new firstName.
+   */
   public void setFirstName(String firstName) {
     this.firstName = deNull(firstName);
   }
 
-  /** @param lastName the lastName to set */
+  /**
+   * Set the last name information.
+   *
+   * @param lastName sets the new lastName.
+   */
   public void setLastName(String lastName) {
     this.lastName = deNull(lastName);
   }
 
-  /** @param jobTitle the description to set */
+  /**
+   * Set the job title information.
+   *
+   * @param jobTitle sets the new description.
+   */
   public void setJobTitle(String jobTitle) {
     this.description = deNull(jobTitle);
   }
 
-  /** @param company the company to set */
+  /**
+   * Set the company information.
+   *
+   * @param company sets the new company.
+   */
   public void setCompany(String company) {
     this.company = deNull(company);
   }
 
-  /** @param url the url to set */
+  /**
+   * Set the URL information.
+   *
+   * @param url sets the new url.
+   */
   public void setUrl(String url) {
     this.url = deNull(url);
   }
 
-  /** @param email the email to set */
+  /**
+   * Set the email address information.
+   *
+   * @param email sets the new email.
+   */
   public void setEmail(String email) {
     this.email = deNull(email);
   }
 
-  /** @param workNumber the workNumber to set */
+  /**
+   * Set the work phone number information.
+   *
+   * @param workNumber sets the new workNumber.
+   */
   public void setWorkNumber(String workNumber) {
     this.workNumber = deNull(workNumber);
   }
 
-  /** @param cellNumber the cellNumber to set */
+  /**
+   * Set the cell phone number information.
+   *
+   * @param cellNumber sets the new cellNumber.
+   */
   public void setCellNumber(String cellNumber) {
     this.cellNumber = deNull(cellNumber);
   }
 
-  /** @param street the street to set */
+  /**
+   * Set the street address information.
+   *
+   * @param street sets the new street.
+   */
   public void setStreet(String street) {
     this.street = deNull(street);
   }
 
-  /** @param city the city to set */
+  /**
+   * Set the city information.
+   *
+   * @param city sets the new city.
+   */
   public void setCity(String city) {
     this.city = deNull(city);
   }
 
-  /** @param zip the zip to set */
+  /**
+   * Set the zip code information.
+   *
+   * @param zip sets the new zip.
+   */
   public void setZip(String zip) {
     this.zip = deNull(zip);
   }
 
-  /** @param state the state to set */
+  /**
+   * Set the state information.
+   *
+   * @param state sets the new state.
+   */
   public void setState(String state) {
     this.state = deNull(state);
   }
 
+  /**
+   * Sets a null to an empty string.
+   *
+   * @param text returns an empty string or text.
+   */
   private String deNull(String text) {
     if (text == null) {
       return "";

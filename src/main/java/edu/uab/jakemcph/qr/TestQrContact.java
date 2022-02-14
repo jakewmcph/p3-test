@@ -10,7 +10,7 @@ package edu.uab.jakemcph.qr;
 import java.time.LocalDateTime;
 import java.time.Month;
 
-/** */
+/** Creates a contact string that displays information about a contact. */
 public class TestQrContact {
 
   private static final int MAX_QR_CONTACTS = 10;

@@ -9,7 +9,7 @@ package edu.uab.jakemcph.qr;
 
 import java.time.LocalDateTime;
 
-/** */
+/** Creates an event string that displays information about an event. */
 public class QrEvent extends QrRecord {
   private String uid;
   private LocalDateTime dtstamp;
@@ -38,42 +38,75 @@ public class QrEvent extends QrRecord {
     this.uid = uid;
   }
 
+  /**
+   * Get the UID code information.
+   *
+   * @return outputs the uid.
+   */
   public String getUid() {
     return uid;
   }
 
+  /**
+   * Get the class information.
+   *
+   * @return outputs the CLASS.
+   */
   public String getCLASS() {
-
     return CLASS;
   }
 
+  /**
+   * Get the job title information.
+   *
+   * @return outputs the description.
+   */
   @Override
   public String getDescription() {
-
     return description;
   }
 
+  /**
+   * Get the date end information.
+   *
+   * @return outputs the dtend.
+   */
   public LocalDateTime getDtend() {
-    if (dtend == null) {
-      setDtend(dtstart);
-    }
     return dtend;
   }
 
+  /**
+   * Get the date stamp information.
+   *
+   * @return outputs the dtstamp.
+   */
   public LocalDateTime getDtstamp() {
     return dtstamp;
   }
 
+  /**
+   * Get the date start information.
+   *
+   * @return outputs the dtstart.
+   */
   public LocalDateTime getDtstart() {
-
     return dtstart;
   }
 
+  /**
+   * Get the summary information.
+   *
+   * @return outputs the summary.
+   */
   public String getSummary() {
-
     return summary;
   }
 
+  /**
+   * Determines if the information provided is valid for QrEvent.
+   *
+   * @return outputs true/false.
+   */
   @Override
   public boolean isValid() {
 
@@ -83,6 +116,11 @@ public class QrEvent extends QrRecord {
     return true;
   }
 
+  /**
+   * Get the information required for the string and print it.
+   *
+   * @return outputs the QrEvent string.
+   */
   public String getQrText() {
     if (isValid() == false) {
       return ("BEGIN: QREVENT" + "\n" + "This Event is not Valid." + "\n" + "END: QREVENT" + "\n");
@@ -114,41 +152,75 @@ public class QrEvent extends QrRecord {
           + "\n");
   }
 
-  /** @param uid the uid to set */
+  /**
+   * Set the UID code information.
+   *
+   * @param uid sets the new uid.
+   */
   public void setUid(String uid) {
     this.uid = uid;
   }
 
-  /** @param dtstamp the dtstamp to set */
+  /**
+   * Set the date stamp information.
+   *
+   * @param dtstamp sets the new dtstamp.
+   */
   public void setDtstamp(LocalDateTime dtstamp) {
     this.dtstamp = dtstamp;
   }
 
-  /** @param dtstart the dtstart to set */
+  /**
+   * Set the date start information.
+   *
+   * @param dtstart sets the new dtstart.
+   */
   public void setDtstart(LocalDateTime dtstart) {
     this.dtstart = dtstart;
   }
 
-  /** @param description the description to set */
+  /**
+   * Set the description information.
+   *
+   * @param description sets the new description.
+   */
+  @Override
   public void setDescription(String description) {
     this.description = deNull(description);
   }
 
-  /** @param dtend the dtend to set */
+  /**
+   * Set the date end information.
+   *
+   * @param dtend sets the new dtend.
+   */
   public void setDtend(LocalDateTime dtend) {
     this.dtend = dtend;
   }
 
-  /** @param summary the summary to set */
+  /**
+   * Set the summary information.
+   *
+   * @param summary sets the new summary.
+   */
   public void setSummary(String summary) {
     this.summary = deNull(summary);
   }
 
-  /** @param CLASS the CLASS to set */
+  /**
+   * Set the class information.
+   *
+   * @param CLASS sets the new CLASS.
+   */
   public void setCLASS(String CLASS) {
     this.CLASS = deNull(CLASS);
   }
 
+  /**
+   * Sets a null to an empty string.
+   *
+   * @param text returns an empty string or text.
+   */
   private String deNull(String text) {
     if (text == null) {
       return "";

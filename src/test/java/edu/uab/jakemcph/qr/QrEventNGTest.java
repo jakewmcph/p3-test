@@ -26,7 +26,7 @@ public class QrEventNGTest {
     tres =
         new QrEvent(
             "1000000000",
-            LocalDateTime.now(),
+            LocalDateTime.of(2022, Month.FEBRUARY, 14, 0, 0),
             LocalDateTime.of(2022, Month.APRIL, 22, 0, 0),
             LocalDateTime.of(2022, Month.APRIL, 22, 23, 59),
             "EE333 Final",
@@ -64,7 +64,7 @@ public class QrEventNGTest {
   /** Test of getDtstamp method, of class QrEvent. */
   @Test
   public void testGetDtstamp() {
-    assertEquals(tres.getDtstamp(), LocalDateTime.now());
+    assertEquals(tres.getDtstamp(), LocalDateTime.of(2022, Month.FEBRUARY, 14, 0, 0));
   }
 
   /** Test of getDtstart method, of class QrEvent. */
@@ -147,6 +147,7 @@ public class QrEventNGTest {
     assertEquals(tres.getCLASS(), "MARCH");
   }
 
+  /** Test of getQrText method, of class QrEvent. */
   @Test
   public void testGetQrText() {
     assertEquals(
@@ -157,7 +158,7 @@ public class QrEventNGTest {
             + "1000000000"
             + "\n"
             + "DTSTAMP: "
-            + LocalDateTime.now()
+            + LocalDateTime.of(2022, Month.FEBRUARY, 14, 0, 0)
             + "\n"
             + "DTSTART: "
             + LocalDateTime.of(2022, Month.APRIL, 22, 0, 0)

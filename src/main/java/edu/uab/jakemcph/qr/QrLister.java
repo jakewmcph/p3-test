@@ -24,7 +24,11 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
-/** */
+
+/**
+ * Creates an ArrayList string that displays information about a contact, event, record, url, or
+ * wap.
+ */
 public class QrLister {
 
   private static final int MAX_QR_RECORDS = 40;
@@ -299,6 +303,11 @@ public class QrLister {
     }
   }
 
+  /**
+   * Create a QR code for QrWap.
+   *
+   * @param item outputs the item array as a QR code.
+   */
   public static void displayQRWapCode(QrWap item) {
     if (!item.isValid()) {
       System.out.println("Stored information was not valid WAP information.");
@@ -334,6 +343,11 @@ public class QrLister {
     }
   }
 
+  /**
+   * Create a QR code for QrUrl.
+   *
+   * @param item outputs the item array as a QR code.
+   */
   public static void displayQRUrlCode(QrUrl item) {
     if (!item.isValid()) {
       System.out.println("Stored information was not valid URL information.");
@@ -369,6 +383,11 @@ public class QrLister {
     }
   }
 
+  /**
+   * Create a QR code for QrRecord.
+   *
+   * @param item outputs the item array as a QR code.
+   */
   public static void displayQRRecordCode(QrRecord item) {
     if (!item.isValid()) {
       System.out.println("Stored information was not valid Record information.");
@@ -404,6 +423,11 @@ public class QrLister {
     }
   }
 
+  /**
+   * Create a QR code for QrEvent.
+   *
+   * @param item outputs the item array as a QR code.
+   */
   public static void displayQREventCode(QrEvent item) {
     if (!item.isValid()) {
       System.out.println("Stored information was not valid Event information.");
@@ -439,6 +463,11 @@ public class QrLister {
     }
   }
 
+  /**
+   * Create a QR code for QrContact.
+   *
+   * @param item outputs the item array as a QR code.
+   */
   public static void displayQRContactCode(QrContact item) {
     if (!item.isValid()) {
       System.out.println("Stored information was not valid Contact information.");

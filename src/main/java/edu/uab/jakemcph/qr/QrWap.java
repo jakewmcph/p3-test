@@ -137,9 +137,4 @@ public class QrWap extends QrRecord {
       return text;
     }
   }
-
-  void isHidden(boolean b) {
-    throw new UnsupportedOperationException("Not supported yet."); // Generated from
-    // nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-  }
 }
