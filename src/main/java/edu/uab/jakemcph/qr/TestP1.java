@@ -30,6 +30,7 @@ public class TestP1 {
 
   /** Helper to check out a QrUrl object */
   private static void checkout(QrUrl qrUrl, boolean valid) {
+    System.out.println("\n");
     System.out.println(qrUrl);
 
     System.out.println("uid: " + qrUrl.getUid());

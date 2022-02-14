@@ -45,6 +45,7 @@ public class TestP2 {
       if (item == null) {
         break; // exit loop if we get to end of array in use
       }
+      System.out.println("\n");
       System.out.println(item);
       System.out.println(item.getQrText());
       System.out.println("Item is " + (item.isValid() ? "" : "not ") + "valid.");

@@ -25,7 +25,7 @@ import java.util.Scanner;
 /** Produce a QR Code graphic to corresponding to first match of user supplied text */
 public class WapLister {
 
-  private static final int MAX_QR_RECORDS = 5;
+  private static final int MAX_QR_RECORDS = 10;
 
   /** @param args the command line arguments (unused) */
   public static void main(String[] args) throws Exception {
@@ -50,14 +50,27 @@ public class WapLister {
       var in =
           new Scanner(
               new File("C:\\Users\\Jake7\\OneDrive\\Documents\\NetBeansProjects\\P3_CSV.csv"));
-      String pattern = in.next();
 
-      for (var record : wap) {
-        if (record.getDescription().contains(pattern)) {
-          displayQRCode(record);
-          System.exit(0);
-        }
-      }
+      in.useDelimiter(",");
+
+      String first = in.next();
+      String second = in.next();
+      String third = in.next();
+      String fourth = in.next();
+      String five = in.next();
+      boolean fifth = Boolean.valueOf(five);
+
+      ArrayList<QrWap> qrWapCsv = new ArrayList<>();
+      QrWap[] csv = new QrWap[MAX_QR_RECORDS];
+      csv[0] = new QrWap(first, second, third, fourth, fifth);
+      Collections.addAll(qrWapCsv, csv);
+      System.out.println(csv[0]);
+      //      for (var record : csv) {
+      //        if (record.getDescription().contains(first)) {
+      displayQRCode(csv[0]);
+      System.exit(0);
+      //        }
+      //      }
     } else if (yN.equalsIgnoreCase("N")) {
       System.out.println("WapLister -- enter text in description to find correct QR Code");
 

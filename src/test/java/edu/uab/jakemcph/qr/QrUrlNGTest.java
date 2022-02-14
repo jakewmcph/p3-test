@@ -49,4 +49,4 @@ public class QrUrlNGTest {
     uno.setUrl("https://www.nfl.com");
     assertEquals(uno.getQrText(), "https://www.nfl.com");
   }
-}
+} 

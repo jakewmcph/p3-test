@@ -176,7 +176,7 @@ public class QrLister {
             null,
             null,
             null,
-            "qrwww.lakers.com",
+            "www.lakers.com",
             null,
             null,
             null,
@@ -229,13 +229,13 @@ public class QrLister {
             + "QrContact, QrEvent, QrRecord, QrUrl, QrWap");
 
     var Qr = new Scanner(System.in);
-    String QrInput = Qr.next();
+    String QrInput = Qr.nextLine();
 
     if (QrInput.equalsIgnoreCase("QrContact")) {
       System.out.println("Please Enter a First Name for Contact Information");
 
       var Qr2 = new Scanner(System.in);
-      String QrInput2 = Qr2.next();
+      String QrInput2 = Qr2.nextLine();
 
       for (var r : contact) {
         if (r.getFirstName().equalsIgnoreCase(QrInput2)) {
@@ -248,7 +248,7 @@ public class QrLister {
       System.out.println("Please Enter a Summary for Event Information");
 
       var Qr2 = new Scanner(System.in);
-      String QrInput2 = Qr2.next();
+      String QrInput2 = Qr2.nextLine();
 
       for (var r : event) {
         if (r.getSummary().equalsIgnoreCase(QrInput2)) {
@@ -261,7 +261,7 @@ public class QrLister {
       System.out.println("Please Enter a Description for Record Information");
 
       var Qr2 = new Scanner(System.in);
-      String QrInput2 = Qr2.next();
+      String QrInput2 = Qr2.nextLine();
 
       for (var r : record) {
         if (r.getDescription().contains(QrInput2)) {
@@ -274,7 +274,7 @@ public class QrLister {
       System.out.println("Please Enter a Description for URL Information");
 
       var Qr2 = new Scanner(System.in);
-      String QrInput2 = Qr2.next();
+      String QrInput2 = Qr2.nextLine();
 
       for (var r : qurl) {
         if (r.getDescription().equalsIgnoreCase(QrInput2)) {
@@ -287,7 +287,7 @@ public class QrLister {
       System.out.println("Please Enter a Description for WAP Information");
 
       var Qr2 = new Scanner(System.in);
-      String QrInput2 = Qr2.next();
+      String QrInput2 = Qr2.nextLine();
 
       for (var r : wap) {
         if (r.getDescription().equalsIgnoreCase(QrInput2)) {

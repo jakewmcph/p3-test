@@ -121,20 +121,7 @@ public class QrContactNGTest {
   @Test
   public void testIsValid() {
     assertTrue(quatro.isValid());
-    System.out.println(quatro.getQrText());
   }
-
-  /** Test of getQrText method, of class QrContact. */
-  //  @Test
-  //  public void testGetQrText() {
-  //    System.out.println("getQrText");
-  //    QrContact instance = null;
-  //    String expResult = "";
-  //    String result = instance.getQrText();
-  //    assertEquals(result, expResult);
-  //    // TODO review the generated test code and remove the default call to fail.
-  //    fail("The test case is a prototype.");
-  //  }
 
   /** Test of setVersion method, of class QrContact. */
   @Test
@@ -174,15 +161,15 @@ public class QrContactNGTest {
   /** Test of setUrl method, of class QrContact. */
   @Test
   public void testSetUrl() {
-    quatro.setUrl("www.nba.com");
-    assertEquals(quatro.getUrl(), "www.nba.com");
+    quatro.setUrl("https://www.nba.com");
+    assertEquals(quatro.getUrl(), "https://www.nba.com");
   }
 
   /** Test of setEmail method, of class QrContact. */
   @Test
   public void testSetEmail() {
-    quatro.setEmail("https://lakers@gmail.com");
-    assertEquals(quatro.getEmail(), "https://lakers@gmail.com");
+    quatro.setEmail("lakers@gmail.com");
+    assertEquals(quatro.getEmail(), "lakers@gmail.com");
   }
 
   /** Test of setWorkNumber method, of class QrContact. */
@@ -226,4 +213,28 @@ public class QrContactNGTest {
     quatro.setState("CA");
     assertEquals(quatro.getState(), "CA");
   }
-}
+
+  /** Test of isUrlValid method, of class QrContact. */
+  @Test
+  public void testIsUrlValid() {
+    assertTrue(quatro.isUrlValid());
+  }
+
+  /** Test of isEmailValid method, of class QrContact. */
+  @Test
+  public void testIsEmailValid() {
+    assertTrue(quatro.isEmailValid());
+  }
+
+  /** Test of isWorkNumberValid method, of class QrContact. */
+  @Test
+  public void testIsWorkNumberValid() {
+    assertTrue(quatro.isWorkNumberValid());
+  }
+
+  /** Test of isCellNumberValid method, of class QrContact. */
+  @Test
+  public void testIsCellNumberValid() {
+    assertTrue(quatro.isCellNumberValid());
+  }
+} 

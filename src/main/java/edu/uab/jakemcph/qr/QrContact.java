@@ -15,7 +15,7 @@ public class QrContact extends QrUrl {
   private String version;
   private String firstName;
   private String lastName;
-  private String description;
+  //  private String description;
   private String company;
   private String url;
   private String email;
@@ -109,6 +109,7 @@ public class QrContact extends QrUrl {
     return zip;
   }
 
+  @Override
   public boolean isValid() {
 
     if ((workNumber == "")

@@ -90,10 +90,14 @@ public class QrWapNGTest {
     assertEquals(dos.getPassword(), "turner");
   }
 
+  /** Test of isHidden method, of class QrWap. */
+
   /** Test of setHidden method, of class QrWap. */
   @Test
   public void testSetHidden() {
-    dos.isHidden(true);
+    boolean hidden = true;
+    QrWap instance = dos;
+    instance.setHidden(hidden);
     assertTrue(dos.isHidden());
   }
 }

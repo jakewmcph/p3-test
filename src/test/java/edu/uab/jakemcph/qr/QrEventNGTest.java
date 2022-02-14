@@ -65,7 +65,6 @@ public class QrEventNGTest {
   @Test
   public void testGetDtstamp() {
     assertEquals(tres.getDtstamp(), LocalDateTime.now());
-    System.out.println(tres.getDtstamp());
   }
 
   /** Test of getDtstart method, of class QrEvent. */
@@ -146,5 +145,36 @@ public class QrEventNGTest {
   public void testSetCLASS() {
     tres.setCLASS("MARCH");
     assertEquals(tres.getCLASS(), "MARCH");
+  }
+
+  @Test
+  public void testGetQrText() {
+    assertEquals(
+        tres.getQrText(),
+        ("BEGIN: QREVENT"
+            + "\n"
+            + "UID: "
+            + "1000000000"
+            + "\n"
+            + "DTSTAMP: "
+            + LocalDateTime.now()
+            + "\n"
+            + "DTSTART: "
+            + LocalDateTime.of(2022, Month.APRIL, 22, 0, 0)
+            + "\n"
+            + "DTEND: "
+            + LocalDateTime.of(2022, Month.APRIL, 22, 23, 59)
+            + "\n"
+            + "SUMMARY: "
+            + "EE333 Final"
+            + "\n"
+            + "DESCRIPTION: "
+            + "This is the final project for EE333"
+            + "\n"
+            + "CLASS: "
+            + "EE 333"
+            + "\n"
+            + "END: QREVENT"
+            + "\n"));
   }
 }

@@ -10,21 +10,16 @@ package edu.uab.jakemcph.qr;
 import java.time.LocalDateTime;
 import java.time.Month;
 
-/**
- *
- */
+/** */
 public class TestQrContact {
 
-    private static final int MAX_QR_CONTACTS = 10;
+  private static final int MAX_QR_CONTACTS = 10;
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-QrContact[] qrContact = new QrContact[MAX_QR_CONTACTS];
+  /** @param args the command line arguments */
+  public static void main(String[] args) {
+    QrContact[] qrContact = new QrContact[MAX_QR_CONTACTS];
     qrContact[0] =
         new QrContact(
-
             "1.0",
             "Tyrese",
             "Haliburton",
@@ -40,7 +35,6 @@ QrContact[] qrContact = new QrContact[MAX_QR_CONTACTS];
             "IN");
     qrContact[1] =
         new QrContact(
-
             "1.1",
             "Nikola",
             "Jokic",
@@ -52,26 +46,63 @@ QrContact[] qrContact = new QrContact[MAX_QR_CONTACTS];
             null,
             null,
             "Denver",
-            "12345",
-            null);
+            null,
+            "CO");
     qrContact[2] =
         new QrContact(
+            "1.2", "Russell", null, null, null, null, null, null, null, null, null, null, "CA");
+    qrContact[3] =
+        new QrContact(null, null, null, null, null, null, null, null, null, null, null, null, null);
+    qrContact[4] =
+        new QrContact(null, null, null, null, null, null, null, null, null, null, null, null, null);
 
-            "1.2",
-            "Russell",
+    qrContact[5] =
+        new QrContact(
+            "1.5",
+            null,
+            "Burrow",
+            "Quarterback",
+            "Cincinatti Bengals",
+            "https://www.bengals.com",
+            "bengals at the email thing uhh gmail",
+            "12345678900",
             null,
             null,
             null,
-            "https://www.lakers.com",
+            null,
+            "OH");
+
+    qrContact[6] =
+        new QrContact(
+            "1.6",
+            "Paolo",
+            "Banchero",
+            "Forward",
+            "Duke Blue Devils",
+            "https://www.duke.com",
+            "p5@gmail.com",
+            "+1 (234) 567-8900",
+            "one two three four 5678900",
             null,
             null,
             null,
+            "OH");
+
+    qrContact[7] =
+        new QrContact(
+            "1.6",
+            "DeMar",
+            "DeRozan",
+            "Small Forward",
+            "Chicago Bulls",
+            "https://www.bulls.com",
+            "defrozen@gmail.com",
+            "one two three four 5678900",
+            "+1 (234) 567-8900",
             null,
             null,
             null,
-            "CA");
-    qrContact[3] = new QrContact(null, null, null, null, null, null, null, null, null, null, null, null, null);
-    qrContact[4] = new QrContact(null, null, null, null, null, null, null, null, null, null, null, null, null);
+            "OH");
 
     var contact3 = (QrContact) qrContact[3];
 
@@ -96,7 +127,7 @@ QrContact[] qrContact = new QrContact[MAX_QR_CONTACTS];
     contact4.setLastName("Russell");
     contact4.setJobTitle("Point Guard");
     contact4.setCompany(null);
-    contact4.setUrl("https://www.twolves.com");
+    contact4.setUrl(".twolves.com");
     contact4.setEmail(null);
     contact4.setWorkNumber("+1 (283)-456-7654");
     contact4.setCellNumber(null);
@@ -109,11 +140,9 @@ QrContact[] qrContact = new QrContact[MAX_QR_CONTACTS];
       if (item == null) {
         break; // exit loop if we get to end of array in use
       }
-//      System.out.println(item);
+      //      System.out.println(item);
       System.out.println(item.getQrText());
-//      System.out.println("Item is " + (item.isValid() ? "" : "not ") + "valid.");
+      //      System.out.println("Item is " + (item.isValid() ? "" : "not ") + "valid.");
     }
   }
     }
-
-
