@@ -299,8 +299,8 @@ public class QrLister {
           System.exit(0);
         }
       }
-      System.out.println("Did not find a matching pattern");
     }
+    System.out.println("Did not find a matching pattern");
   }
 
   /**

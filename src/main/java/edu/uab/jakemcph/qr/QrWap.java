@@ -2,7 +2,7 @@
  * Author: Jake McPhearson <jakemcph@uab.edu>
  * Assignment:  qr - EE333 Spring 2022
  *
- * Credits:  (if any for sections of code)
+ * Credits:  https://www.geeksforgeeks.org/writing-a-csv-file-in-java-using-opencsv/
  */
 package edu.uab.jakemcph.qr;
 

@@ -2,7 +2,9 @@
  * Author: Jake McPhearson <jakemcph@uab.edu>
  * Assignment:  qr-p3 - EE333 Spring 2022
  *
- * Credits:  (if any for sections of code)
+ * Credits:  https://stackoverflow.com/questions/8204680/java-regex-email
+ *           https://www.geeksforgeeks.org/check-if-an-url-is-valid-or-not-using-regular-expression/
+ *           https://www.geeksforgeeks.org/java-program-to-check-for-a-valid-mobile-number/
  */
 
 package edu.uab.jakemcph.qr;

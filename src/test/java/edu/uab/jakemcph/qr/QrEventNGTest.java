@@ -83,7 +83,6 @@ public class QrEventNGTest {
   @Test
   public void testIsValid() {
     assertTrue(tres.isValid());
-    System.out.println(tres.getQrText());
   }
 
   /** Test of getQrText method, of class QrEvent. */

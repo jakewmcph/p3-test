@@ -72,7 +72,9 @@ public class WapLister {
       //        }
       //      }
     } else if (yN.equalsIgnoreCase("N")) {
-      System.out.println("WapLister -- enter text in description to find correct QR Code");
+      System.out.println(
+          "WapLister -- enter text in description to find correct QR Code"); // the CSV is in the
+      // file uploaded
 
       var in = new Scanner(System.in);
       String pattern = in.next();
@@ -82,8 +84,8 @@ public class WapLister {
           displayQRCode(record);
           System.exit(0);
         }
+        System.out.println("Did not find a matching pattern.");
       }
-      System.out.println("Did not find a matching pattern.");
     }
   }
 
