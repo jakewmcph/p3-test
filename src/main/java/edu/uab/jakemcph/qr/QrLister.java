@@ -246,6 +246,7 @@ public class QrLister {
           displayQRContactCode(r);
           System.exit(0);
         }
+        System.out.println("Did not find a matching pattern");
       }
     }
     if (QrInput.equalsIgnoreCase("QrEvent")) {
@@ -259,6 +260,7 @@ public class QrLister {
           displayQREventCode(r);
           System.exit(0);
         }
+        System.out.println("Did not find a matching pattern");
       }
     }
     if (QrInput.equalsIgnoreCase("QrRecord")) {
@@ -272,6 +274,7 @@ public class QrLister {
           displayQRRecordCode(r);
           System.exit(0);
         }
+        System.out.println("Did not find a matching pattern");
       }
     }
     if (QrInput.equalsIgnoreCase("QrUrl")) {
@@ -285,6 +288,7 @@ public class QrLister {
           displayQRUrlCode(r);
           System.exit(0);
         }
+        System.out.println("Did not find a matching pattern");
       }
     }
     if (QrInput.equalsIgnoreCase("QrWap")) {
@@ -298,6 +302,7 @@ public class QrLister {
           displayQRWapCode(r);
           System.exit(0);
         }
+        System.out.println("Did not find a matching pattern");
       }
     }
     System.out.println("Did not find a matching pattern");

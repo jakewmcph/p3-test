@@ -2,7 +2,7 @@
  * Author: Jake McPhearson <jakemcph@uab.edu>
  * Assignment:  qr - EE333 Spring 2022
  *
- * Credits:  (if any for sections of code)
+ * Creating new branch
  */
 package edu.uab.jakemcph.qr;
 
@@ -22,6 +22,7 @@ public abstract class QrRecord {
     this.uid = "" + ++count;
     this.description = fixUpDescription(description);
     this.url = url;
+    // push
   }
 
   /**
